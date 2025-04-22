@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop - Fashion Bliss</title>
+  <link rel="stylesheet" href="shopstyles.css" />
+</head>
+<body>
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <div class="logo">
+      <a href="finalindex.html">
+        <img src="logo.png" alt="Fashion Bliss" />
+      </a>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="finalindex.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="collections.html">Collections</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="main">
+    <h1>Shop Our Latest Styles</h1>
+    <div class="product-list">
+      <!-- Product items -->
+      <script>
+        const products = [
+          ["🌸 Floral Maxi Dress", "https://i.pinimg.com/236x/fd/bf/7e/fdbf7e1f594eb36783ae2797373e08ec.jpg", "$45.00"],
+          ["👚 Blush Pink Crop Top", "https://i.pinimg.com/236x/cb/73/a5/cb73a52aacf5ddde8bbfa0959a29f027.jpg", "$28.00"],
+          ["👜 Rose Gold Handbag", "https://i.pinimg.com/236x/e0/e8/94/e0e8949198ecc37173ecf16272e04b41.jpg", "$55.00"],
+          ["👖 High-Waisted Jeans", "https://i.pinimg.com/474x/46/72/bb/4672bb178455df86834f41186d345e57.jpg", "$35.00"],
+          ["👠 Nude Heels", "https://i.pinimg.com/236x/2b/3b/6e/2b3b6ea5d1d8eb321b2084899254054b.jpg", "$60.00"],
+          ["🧥 Pink Faux Fur Jacket", "https://i.pinimg.com/236x/79/b6/03/79b60378ab2118e13adda23cffc8a11a.jpg", "$80.00"],
+          ["👗 Velvet Wrap Dress", "https://i.pinimg.com/236x/b5/60/be/b560bef28523c3bc5daceec530faa6a7.jpg", "$65.00"],
+          ["🧢 Embroidered Cap", "https://i.pinimg.com/236x/94/b7/83/94b7835aa8ef40bb4df3d963b7b43955.jpg", "$18.00"],
+          ["🩴 Platform Sandals", "https://i.pinimg.com/236x/b3/73/c2/b373c224b007844fe7a0979e3f050d91.jpg", "$42.00"],
+          ["🎀 Satin Hair Bow", "https://i.pinimg.com/236x/9a/bb/db/9abbdb567eb8ef0f42d9cffa6bb6554d.jpg", "$12.00"]
+        ];
+
+        const container = document.querySelector(".product-list");
+        products.forEach(([name, img, price]) => {
+          const div = document.createElement("div");
+          div.className = "product";
+          div.innerHTML = `
+            <img src="${img}" alt="${name}" />
+            <h3>${name}</h3>
+            <p>${price}</p>
+            <button onclick="addToCart('${name}', '${img}', '${price}')">Add to Cart</button>
+          `;
+          container.appendChild(div);
+        });
+      </script>
+    </div>
+  </section>
+
+  <script src="shopscript.js"></script>
+</body>
+</html>
